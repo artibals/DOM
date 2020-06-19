@@ -96,7 +96,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 document.querySelector('.btn-new').addEventListener('click', init); // --> call back function
 
 document.querySelector('.btn-rules').addEventListener('click', function() {
-    alert('- The game has 2 players, playing in rounds \n- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score \n- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it\'s the next player\'s turn\n- The player can choose to \'Hold\', which means that his ROUND score gets added to his GLOBAL score. After that, it\'s the next player\'s turn. \n- You can write your own TOP SCORE. TOP SCORE is 100 by default. The first player to reach TOP SCORE points on GLOBAL score wins the game');
+    alert('- The game has 2 players, playing in rounds. \n- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score. \n- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it\'s the next player\'s turn. \n- The player can choose to \'HOLD\', which means that his ROUND score gets added to his GLOBAL score. After that, it\'s the next player\'s turn. \n- You can write your own TOP SCORE. TOP SCORE is 100 by default. The first player to reach TOP SCORE points on GLOBAL score wins the game. \n- Also there is a SECRET rule, it will be a SURPRIZE! :)');
 })
 
 function chooseScore() {

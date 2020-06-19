@@ -84,7 +84,7 @@ body {
     margin-bottom: 130px;
 }
 
-.active { background-color: #f7f7f7; }
+.active { background-color: #f0e5e5; }
 .active .player-name { font-weight: 300; }
 
 .active .player-name::after {
@@ -151,8 +151,8 @@ i {
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px; left: 400px;}
-.btn-rules { top: 45px; left: 600px;}
+.btn-new { top: 45px; left: 390px;}
+.btn-rules { top: 45px; left: 570px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 
