@@ -46,7 +46,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: rgb(255, 213, 159);
     box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
@@ -70,7 +70,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 100;
+    font-weight: 400;
     margin-top: 20px;
     margin-bottom: 10px;
     position: relative;
@@ -79,13 +79,15 @@ body {
 .player-score {
     text-align: center;
     font-size: 80px;
-    font-weight: 100;
-    color: #EB4D4D;
+    font-weight: 300;
+    color: #201d1d;
     margin-bottom: 130px;
 }
 
-.active { background-color: #f0e5e5; }
-.active .player-name { font-weight: 300; }
+.active { 
+    background-image: url(images/pika.jpg);
+}
+.active .player-name { font-weight: 800; }
 
 .active .player-name::after {
     content: "\2022";
@@ -129,7 +131,7 @@ button {
     font-size: 20px;
     text-transform: uppercase;
     cursor: pointer;
-    font-weight: 300;
+    font-weight: 1000;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -141,18 +143,21 @@ button:focus {
 }
 
 i {
-    color: #EB4D4D;
+    color: #ffffff;
     display: inline-block;
     margin-right: 15px;
     font-size: 32px;
+    font-weight: 800;
     line-height: 1;
     vertical-align: text-top;
     margin-top: -4px;
     transition: margin 0.3s;
 }
 
-.btn-new { top: 45px; left: 390px;}
-.btn-rules { top: 45px; left: 570px;}
+.btn-new { top: 25px; left: 400px;}
+.btn-rules { top: 25px; left: 570px;}
+.btn-name-1 { top: 75px; left: 250px;}
+.btn-name-2 { top: 75px; left: 750px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 
@@ -172,5 +177,5 @@ i {
     top: 238px;
 }
 
-.winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 300; color: #EB4D4D; }
+.winner { background-image: url(images/pika.jpg); }
+.winner .player-name { font-weight: 800; color: #EB4D4D; }

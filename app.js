@@ -17,7 +17,7 @@ Change the game to follow these rules:
 3. Add another dice to the game, so that there are two dices now. The player looses his current score when one of them is a 1. (Hint: you will need CSS to position the second dice, so take a look at the CSS code for the first one.)
 */
 
-var scores, roundScore , activePlayer, gamePlaying;
+var scores, roundScore , activePlayer, gamePlaying, player_1, player_2;
 
 init();
 
@@ -45,8 +45,8 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         diceDOMtop.style.display = 'block';
         diceDOMbottom.style.display = 'block';
 
-        diceDOMtop.src = './images/dice-' + diceTop + '.png';
-        diceDOMbottom.src = './images/dice-' + diceBottom + '.png';
+        diceDOMtop.src = './images/dice-' + diceTop + '.jpg';
+        diceDOMbottom.src = './images/dice-' + diceBottom + '.jpg';
         
         // 3. Update the round score if the rolled number was NOT a 1
         if(diceTop === 6 && diceBottom === 6){
@@ -85,6 +85,8 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+
+
             gamePlaying = false;
         } else {
             // Next player
@@ -96,8 +98,42 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 document.querySelector('.btn-new').addEventListener('click', init); // --> call back function
 
 document.querySelector('.btn-rules').addEventListener('click', function() {
-    alert('- The game has 2 players, playing in rounds. \n- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score. \n- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it\'s the next player\'s turn. \n- The player can choose to \'HOLD\', which means that his ROUND score gets added to his GLOBAL score. After that, it\'s the next player\'s turn. \n- You can write your own TOP SCORE. TOP SCORE is 100 by default. The first player to reach TOP SCORE points on GLOBAL score wins the game. \n- Also there is a SECRET rule, it will be a SURPRIZE! :)');
-})
+    alert('- The game has 2 players, playing in rounds. \n- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score. \n- BUT, if the player rolls a MEWTWO, all his ROUND score gets lost. After that, it\'s the next player\'s turn. \n- The player can choose to \'HOLD\', which means that his ROUND score gets added to his GLOBAL score. After that, it\'s the next player\'s turn. \n- You can write your own TOP SCORE. TOP SCORE is 100 by default. The first player to reach TOP SCORE points on GLOBAL score wins the game. \n- Also there is a SECRET rule, it will be a SURPRIZE! :)');
+});
+
+document.querySelector('.btn-name-1').addEventListener('click', function() {
+    if(gamePlaying){
+        player_1 = prompt('Please enter your name!');
+
+        if(player_1 === '' || player_1 === null){
+            document.getElementById('name-0').textContent = document.getElementById('name-0').textContent;
+        } else {
+            document.getElementById('name-0').textContent = player_1.slice(0, 8);
+        };
+    }
+});
+
+document.querySelector('.btn-name-2').addEventListener('click', function() {
+    if(gamePlaying){player_2 = prompt('Please enter your name!');
+
+    if(player_2 === '' || player_2 === null){
+        document.getElementById('name-1').textContent = document.getElementById('name-1').textContent;
+    } else {        
+        document.getElementById('name-1').textContent = player_2.slice(0, 8);
+    };}
+});
+
+/*
+function changeName(name, playerName) {
+    player = prompt('Please enter your name!');
+    
+    if(player === '' || player === null){
+        document.getElementById(name).textContent = play;
+    } else {
+        document.getElementById(name).textContent = player_1.slice(0, 8);
+    };
+};
+*/
 
 function chooseScore() {
     var topScore = document.querySelector(".top-score").value;
@@ -138,8 +174,8 @@ function init() {
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
-    document.getElementById('name-0').textContent = 'Player 1';
-    document.getElementById('name-1').textContent = 'Player 2';
+    document.getElementById('name-0').textContent = 'player 1';
+    document.getElementById('name-1').textContent = 'player 2';
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
     document.querySelector('.player-0-panel').classList.remove('active');
