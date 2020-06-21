@@ -21,7 +21,7 @@ var scores, roundScore , activePlayer, gamePlaying, player_1, player_2;
 
 init();
 
-var lastDice;
+//var lastDice;
 var winningScore;
 
 //document.querySelector('#current-' + activePlayer).textContent = dice; --> selects element in HTML with id 'current-0 or 1' and changes its text(only text) with dice variable
@@ -63,7 +63,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
             nextPlayer();        
         }
 
-        lastDice = diceTop;
+        //lastDice = diceTop;
     }
 });
 
