@@ -114,13 +114,15 @@ document.querySelector('.btn-name-1').addEventListener('click', function() {
 });
 
 document.querySelector('.btn-name-2').addEventListener('click', function() {
-    if(gamePlaying){player_2 = prompt('Please enter your name!');
+    if(gamePlaying){
+        player_2 = prompt('Please enter your name!');
 
-    if(player_2 === '' || player_2 === null){
-        document.getElementById('name-1').textContent = document.getElementById('name-1').textContent;
-    } else {        
-        document.getElementById('name-1').textContent = player_2.slice(0, 8);
-    };}
+        if(player_2 === '' || player_2 === null){
+            document.getElementById('name-1').textContent = document.getElementById('name-1').textContent;
+        } else {        
+            document.getElementById('name-1').textContent = player_2.slice(0, 8);
+        };
+    }
 });
 
 /*
